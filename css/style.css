@@ -10,28 +10,30 @@ h2 {
     background-color: darkcyan;
     /* толщина 2пикс сплошная граница синего цвета */
     border: 2px dotted blue;
-
 }
 
 p {
     color: blue;
-    text-align: end;
-
-    max-width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-    font-family: "Roboto", sans-serif;
-
-    color: aqua;
     background-color: crimson;
-    text-align: center;
     border: 2px solid green;
+}
 
-    color: blueviolet;
-    background-color: azure;
-    text-align: center;
-    font-size: 24px;
-    line-height: 30px;
+.head-2 {
+    color: darkblue;
+}
+
+/* #head-id-2 {
+    color: #ff0000;
+} */
+
+.user {
+    background-color: aqua;
+}
+
+.user h3 {
+    background-color: blue;
+}
+
+.user p {
+    background-color: darkcyan;
 }
