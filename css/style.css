@@ -1,3 +1,7 @@
+/* * {
+    margin: 0;
+} */
+
 /* стили для заголовка 1 уровня */
 h1 {
     color: blueviolet;
@@ -26,14 +30,57 @@ p {
     color: #ff0000;
 } */
 
+
+/* .user */
 .user {
     background-color: aqua;
+    margin: 20px 10px 15px;
+    border: 2px solid blue;
+    padding: 20px 40px 30px 25px;
+    max-width: 500px;
+    height: 200px;
 }
 
 .user h3 {
     background-color: blue;
+    text-align: center;
+    text-decoration: line-through;
+    text-transform: capitalize;
+    letter-spacing: 4px;
 }
 
 .user p {
     background-color: darkcyan;
+}
+
+/* .news */
+.news {
+    color: aquamarine;
+    background-color: blueviolet;
+    margin: 20px;
+    border: 3px dashed coral;
+    padding: 20px 40px 0;
+    /* padding: 20px 40px; */
+    width: 1000px;
+    height: 500px;
+}
+
+.text {
+    background-color: dimgrey;
+    border: 4px;
+    border-radius: 15%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    /* margin: 0 20px; */
+    margin: 0 20px 0 20px;
+}
+
+#text_news {
+    color: brown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.crat {
+    background-color: brown;
+    color: black;
 }
