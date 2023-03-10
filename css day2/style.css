@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;300;400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;1,400;1,500&family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&family=Rampart+One&display=swap');
+
+/***************************************************************************************/
+/************************************* шапка сайта *************************************/
+/***************************************************************************************/
 .head-1 {
     /* font-weight: normal;
     font-style: italic; */
@@ -7,9 +12,142 @@
 
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 200;
+
+    background-color: antiquewhite;
+    color: black;
+    transition: all 0.3s;
 }
+
+.head-1:hover {
+    background-color: aliceblue;
+    color: brown;
+}
+
 
 .head-2 {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 400;
+}
+
+.par-1 {
+    font-family: 'Rampart One'cursive;
+    font-size: 17px;
+    font-style: oblique;
+}
+
+/* непосещенная */
+a:link {
+    background-color: aqua;
+}
+
+/* посещенная */
+a:visited {
+    background-color: bisque;
+}
+
+/* при наведении */
+a:hover {
+    background-color: blueviolet;
+}
+
+/* при зажатии левой кнопки */
+a:active {
+    background-color: coral;
+}
+
+.fruits {
+    list-style-type: none;
+}
+
+.fruits li {
+    background-color: antiquewhite;
+    margin: 10px 0;
+}
+
+.nav a {
+    padding: 10px 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: black;
+    transition: all 0.5s;
+}
+
+.nav a:hover {
+    background-color: blue;
+    color: rgb(255, 123, 0);
+}
+
+.container {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    background-color: lightgray;
+}
+
+.child {
+    width: 30px;
+    height: 33px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: goldenrod;
+}
+
+.child-2 {
+    font-size: 20px;
+    color: azures;
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.div p #par-1 {
+    font-family: 'Rampart One', cursive;
+    font-size: 17px;
+    font-style: oblique;
+}
+
+.hover-1 .par-2 {
+    background-color: black;
+    color: aqua;
+    transition: all 0.5s;
+}
+
+.hover-1 .par-2:hover {
+    background-color: brown;
+    color: darkcyan;
+
+}
+
+.animation {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(247, 236, 233);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+
+    animation-name: my-example;
+    animation-duration: 5s;
+}
+
+@keyframes my-example {
+
+    /* начало */
+    from {
+        background-color: darksalmon;
+        color: silver;
+    }
+
+    /* конец */
+    to {
+        background-color: rgb(17, 255, 0);
+        color: rgb(202, 44, 44);
+    }
 }
