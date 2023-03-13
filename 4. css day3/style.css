@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+}
+
+
+/* flex-container*/
+.container {
+
+    background-color: aliceblue;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+
+    /* flex */
+    display: flex;
+    gap: 15px;
+    /* выравнивание по горизонтали*/
+    justify-content: space-around;
+    /* выравнивание по вертикали */
+    /* align-items: flex-start; */
+    flex-wrap: wrap;
+}
+
+/* flex-elements*/
+.container .box {
+    background-color: rgb(203, 251, 253);
+    padding: 10px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+
+.container .box h2 {
+    margin: 0 10px 20px;
+}
+
+.container .box-2 {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.container .box-2 h2 {
+    background-color: rgb(189, 155, 220);
+    margin: 0;
+    margin-bottom: 10px;
+    width: 150px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.container .box-2 p {
+    background-color: rgb(64, 166, 166);
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+
+/* grid-container */
+.grid-container {
+    background-color: bisque;
+    padding: 20px;
+    max-width: 1000px;
+
+    display: grid;
+    row-gap: 40px;
+    column-gap: 20px;
+    grid-template-columns: repeat(3, auto);
+    /* grid-template-rows: 400px; */
+
+    /* выравнивание элементов в ячейках по горизонтали */
+    justify-items: center;
+
+    /* выравнивание элементов в ячейках по вертикали */
+    /* align-items: end; */
+
+    /* выравнивание сетки внутри ее контейнера */
+    /* justify-content: center; */
+}
+
+.grid-container .box {
+    background-color: honeydew;
+    padding: 10px;
+    /* width: 200px; */
+}
+
+.grid-container .box-1 {
+    background-color: darkorchid;
+    grid-column: 1/3;
+    grid-row: 1/3;
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* базовый размер шрифта 10пх*/
+    font-size: 62.5%;
+    font-family: 'Alata', sans-serif;
+    color: #e8e8e8;
+}
+
+body {
+    height: 100vh;
+    background-image: url(background.png);
+    background-color: rgba(30, 0, 66, 1);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+header {
+    max-width: 142rem;
+    padding: 6rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo {
+    font-size: 2.7rem;
+}
+
+header nav {
+    display: flex;
+    padding: 1.4rem 3.6rem;
+    gap: 3.6rem;
+    /* background-color: #733db5b0; */
+}
+
+header nav a {
+    font-size: 1.2rem;
+    color: #e8e8e8;
+    padding: 1.2rem 2rem;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+header nav a:hover {
+    background: #402166;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+}
+
+/* main */
+main {
+    max-width: 142rem;
+    padding: 2rem 10rem;
+    display: grid;
+    grid-template-columns: 50rem;
+    justify-content: end;
+    font-size: 1.6rem;
+}
+
+main .title {
+    margin-bottom: 3rem;
+}
