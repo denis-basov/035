@@ -1,0 +1,13 @@
+.users {
+    display: flex;
+    justify-content: space-around;
+}
+
+.user {
+    background-color: aqua;
+    padding: 10px;
+}
+
+.user h2 span {
+    color: brown;
+}
