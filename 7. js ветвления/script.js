@@ -74,6 +74,16 @@
 // let elvisLives = Math.PI > 3 ? "Да" : "Нет";
 // console.log(elvisLives);
 
-let isRainyNow = true;
+// let isRainyNow = false;
 // напишите проверку переменной isRainyNow исп тернарный оператор
 // в результате получаем одну из двух строк 'дождь идет' или 'дождь не идет'
+
+// let res = isRainyNow === true ? 'дождь идет' : 'дождь не идет';
+// console.log(res);
+
+// let resultRain = isRainyNow === true ? 'Дождь идет' : 'Дождь кончился';
+// console.log(resultRain);
+
+// let isRainy = false;
+
+// console.log(  isRainy ? 'Дождь идет' : 'Дождь не идет'  );
