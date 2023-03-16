@@ -123,7 +123,3 @@ let htmlStr = `
 
 console.log(htmlStr); // вывод в консоль
 document.write(htmlStr); // вывод в документ
-
-
-
-
