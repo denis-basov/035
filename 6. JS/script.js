@@ -101,6 +101,7 @@ let lastName = 'Ivanov';
 let age = 11;
 let hobby = 'Reading';
 let isAdmin = false;
+let image = 'user.jpg';
 
 let htmlStr = `
     <div class="users">
@@ -110,6 +111,7 @@ let htmlStr = `
             <p>Age: ${age}.</p>
             <p>Hobby: ${hobby}.</p>
             <p>Admin? ${isAdmin}.</p>
+            <img src="${image}" alt="картинка с пользователем">
         </div>
         <div class="user">
             <h2>Name: <span>${firstName}</span></h2> 
@@ -121,5 +123,11 @@ let htmlStr = `
     </div>    
 `;
 
-console.log(htmlStr); // вывод в консоль
-document.write(htmlStr); // вывод в документ
+// console.log(htmlStr); // вывод в консоль
+// document.write(htmlStr); // вывод в документ
+
+// 1 получаем контейнер для вставки текста
+let box = document.querySelector('.box');
+console.log(box);
+// 2 вставляем в контейнер сформированную разметку
+box.insertAdjacentHTML('beforeend', htmlStr);
