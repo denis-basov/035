@@ -181,9 +181,185 @@ const numbers = [6, 11, 2, 10, 22, 1, 30, 4, 2, 7, 12];
 // numbers.sort();
 // console.log(numbers);
 
+// let users = [
+//     ['Vasya', '123456'],
+//     ['Irina', '365334'],
+//     ['Anna', '438799'],
+// ];
+// console.log(users);
+
+
+// let userName = 'Ivan999';
+// let userNameUpper = userName.toUpperCase();
+// console.log(userNameUpper.length);
+
+
+/*
+ Объекты 
+*/
+
+
+let cars = {
+    markCar: 'BMW',
+    modelCar: '5seria',
+    strongCar: '540ls',
+    phones: ['92575845', '24587545'],
+    adress: {
+        city: 'Bavaria',
+        street: 'Shnac',
+        house: '78',
+    }
+};
+
+let car = {
+    brand: 'Volvo',
+    model: 'XC90',
+    color: 'white',
+    run: 0,
+};
+
+let domVDerevne = {
+    materialWall:'woods',
+    floor:3,
+    windows:5,
+    materialRoof: 'metal',
+    adress:{
+        city:'Okunevo',
+        street:'Cenralnaya',
+        dom:36,
+    }
+}    
+
+
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+
+
+let user = {
+    userName: 'Ivan999',
+    firstName: 'Ivan',
+    lastName: 'Ivanov',
+    age: 11,
+    phones: ['911', '01', '9874'],
+    address: {
+        city: 'Moscow',
+        street: 'Pushkina',
+        house: 45,
+        str: 23
+    },
+    // start(){
+    //     console.log('start');
+    // }
+};
+
+// user.address.house = 44;
+// user.address.house = 44;
+// console.log(user.address.house);
+// user.age = 12;
+
+// console.log( user );
+// console.log( user.age );
+
+// console.log('Материал: '+domVDerevne.materialWall,'Окон: '+domVDerevne.windows,'Город: '+domVDerevne.adress.city);
+
+// console.log('Материал: ' + domVDerevne.materialWall + ',','Окон: ' + domVDerevne.windows, 'Город: ' + domVDerevne.adress.city);
+
+// console.log( `<h2>В деревне ${domVDerevne.adress.city}</h2> 
+//             <p>есть дом с ${domVDerevne.windows}</p> 
+//             <p>и стенами из ${domVDerevne.materialWall}</p>`
+//             );
+
+
+//let cats = 5;
+
+// cats = cats + 5;
+// cats += 5;
+
+// cats = cats - 1;
+// cats -= 1;
+// cats--;
+
+// console.log( cats-- ); // 5
+// console.log( cats ); // 4
+
 let users = [
-    ['Vasya', '123456'],
-    ['Irina', '365334'],
-    ['Anna', '438799'],
+    {
+        userName: 'Ivan999',
+        firstName: 'Ivan',
+        lastName: 'Ivanov',
+        age: 11,
+        phones: ['911', '01', '9874'],
+    },
+    {
+        userName: 'Anna123',
+        firstName: 'Anna',
+        lastName: 'Ivanova',
+        age: 13,
+        phones: ['456', '04', '546221'],
+    },
+    {
+        userName: 'Sergey19',
+        firstName: 'Sergey',
+        lastName: 'Petrov',
+        age: 33,
+        phones: ['2345', '3423', '345234'],
+    }
 ];
-console.log(users);
+
+let htmlStr = `
+    <div class="users">
+        <div class="user">
+            <h2>First Name: ${users[0].firstName}</h2> 
+            <h3>Last name: ${users[0].lastName}.</h3>
+            <p>Age: ${users[0].age}.</p>
+            <p>Phones:</p>
+            <ul class="list">
+                <li class="list-item">${users[0].phones.join('</li><li class="list-item">')}</li>
+            </ul>
+        </div>
+        <div class="user">
+            <h2>First Name: ${users[1].firstName}</h2> 
+            <h3>Last name: ${users[1].lastName}.</h3>
+            <p>Age: ${users[1].age}.</p>
+            <p>Phones:</p>
+            <ul class="list">
+                <li class="list-item">${users[1].phones.join('</li><li class="list-item">')}</li>
+            </ul>
+        </div>
+        <div class="user">
+            <h2>First Name: ${users[2].firstName}</h2> 
+            <h3>Last name: ${users[2].lastName}.</h3>
+            <p>Age: ${users[2].age}.</p>
+            <p>Phones:</p>
+            <ul class="list">
+                <li class="list-item">${users[2].phones.join('</li><li class="list-item">')}</li>
+            </ul>
+        </div>
+    </div>    
+`;
+
+console.log(htmlStr);
+
+// 1 получаем контейнер для вставки текста
+let box = document.querySelector('.box');
+console.log(box);
+// 2 вставляем в контейнер сформированную разметку
+box.insertAdjacentHTML('beforeend', htmlStr);
+
+// Anna123, 11, Ivan999, 546221, Petrov, 3423
+// console.log(users[1].firstName, users[0].age, users[0].userName, users[1].phones[2], users[2].lastName, users[2].phones[1]);
+// console.log(`${users[1].userName}, ${users[0].age},
+// ${users[0].userName}, ${users[1].phones[2]}, 
+// ${users[2].lastName}, ${users[2].phones[1]}`);
+
+// console.log(`Пользователю ${users[1].userName} всего ${users[0].age}, позвоните её отцу с ником ${users[0].userName}, его фамилия ${users[2].lastName}, а идентификационный номер ${users[2].phones[1]} `)
+
+
+// работа с репозиторием
+// git clone https://github.com/denis-basov/035
+// кодите
+// git add . добавление всех файлов в гиг
+// git coomit -m "комментарий"
+// git push origin master
