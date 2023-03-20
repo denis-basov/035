@@ -308,6 +308,7 @@ let users = [
     }
 ];
 
+
 let htmlStr = `
     <div class="users">
         <div class="user">
