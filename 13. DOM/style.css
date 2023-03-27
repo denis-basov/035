@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(208, 246, 234);
+}
+
+.hidden {
+    display: none;
+}
+
+.box {
+    /* display: block; */
+    background-color: azure;
+    color: blueviolet;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid rgb(181, 197, 249);
+    border-radius: 8px;
+}
