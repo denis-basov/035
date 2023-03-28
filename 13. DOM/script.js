@@ -262,7 +262,216 @@ h2Name.innerText = newArgum;
 
 // toggle - добавление / удаление класса
 
-let form = document.querySelector('form');
-console.log(form);
+// let form = document.querySelector('form');
+// console.log(form);
 
-form.classList.toggle('box');
+// form.classList.toggle('box');
+
+// getAttribute()
+// let fname = document.querySelector('#fname');
+// console.log(fname);
+
+// let attr = fname.getAttribute('name');
+// console.log(attr);
+
+// let pic1 = document.querySelector('#pic-1');
+// console.log( pic1.getAttribute('src') );
+// console.log( pic1.getAttribute('alt') );
+
+// let firstPar = document.querySelector('#first-par');
+// console.log( firstPar.getAttribute('class') );
+
+// setAttribute()
+// let logo = document.querySelector('#logo');
+// logo.setAttribute('class', 'logo');
+
+// let title = document.querySelector('.title');
+// console.log( title.getAttribute('class') );
+// title.setAttribute('class', 'title-1');
+
+
+// let pic1 = document.querySelector('#pic-1');
+// let pic2 = document.querySelector('#pic-2');
+
+// let src1 = pic1.getAttribute('src');
+
+// pic1.setAttribute('src', pic2.getAttribute('src'));
+// pic2.setAttribute('src', src1);
+
+// let picFirst = document.querySelector('#pic-1');
+// let picSecond = document.querySelector('#pic-2');
+
+// let srcFirst = picFirst.getAttribute('src');
+// let srcSecond = picSecond.getAttribute('src');
+
+// picFirst.src = srcSecond;
+// picSecond.src = srcFirst;
+// console.dir(picFirst);
+
+// let img1 = document.querySelector('#pic-1');
+// let img2 = document.querySelector('#pic-2');
+
+// let src = img1.getAttribute('src');
+// let alt = img1.getAttribute('alt');
+
+// console.log(src);
+
+// img1.setAttribute('src',img2.getAttribute('src'));
+// img1.setAttribute('alt',img2.getAttribute('alt'));
+// img2.setAttribute('src',src);
+// img2.setAttribute('alt',alt);
+
+// createElement
+// let par = document.createElement('p');
+// par.innerHTML = 'Hello, <span>summer</span>';
+// par.classList.add('box');
+// par.setAttribute('id', 'dom-par');
+
+// console.log(par);
+
+// 3 задание 
+// создайте элемент div
+// поместите внутрь элемента два заголовка с текстом
+// добавьте элементу div класс, идентификатор
+
+// let div = document.createElement('div');
+// div.innerHTML = '<h1>Привет!</h1><h1>Привет!</h1>';
+// div.setAttribute('id', 'dom-div');
+// div.setAttribute('class', 'dom-div');
+// console.log(div);
+
+// let newDiv = document.createElement('div');
+// newDiv.innerHTML = '<h1>Первый заголовок</h1> <h2>Второй заголовок</h2>';
+// newDiv.classList.add('new-div');
+// newDiv.setAttribute('id', 'new-div');
+// console.log(newDiv);
+
+// let divv = document.createElement('div');
+// divv.innerHTML = '<h1>Доброе утро,</h1><h2>Как дела?</h2>';
+// divv.classList.add('box-1');
+// divv.setAttribute('id','divv ok');
+// console.log(divv);
+
+// let container = document.querySelector('.container');
+
+// appendChild
+// console.log(container);
+// container.appendChild(div);
+// container.appendChild(newDiv);
+// container.appendChild(divv);
+// container.appendChild(`<p>hello</p>`);
+
+// prepend
+// container.prepend(div);
+// container.prepend(newDiv);
+// container.prepend(divv);
+// container.prepend(`<p>hello</p>`);
+
+// insertAdjacentElement
+// container.insertAdjacentElement('afterend', par);
+
+// 4 задание
+// let div = document.createElement('div');
+// div.innerHTML = '<h1>Привет!</h1><h1>Привет!</h1>';
+// div.setAttribute('id', 'dom-div');
+// div.setAttribute('class', 'dom-div');
+
+// let newDiv = document.createElement('div');
+// newDiv.innerHTML = '<h1>Первый заголовок</h1> <h2>Второй заголовок</h2>';
+// newDiv.classList.add('new-div');
+// newDiv.setAttribute('id', 'new-div');
+
+// let divv = document.createElement('div');
+// divv.innerHTML = '<h1>Доброе утро,</h1><h2>Как дела?</h2>';
+// divv.classList.add('box-1');
+// divv.setAttribute('id','divv ok');
+
+// let par = document.createElement('p');
+// par.innerHTML = 'Hello, <span>summer</span>';
+// par.classList.add('box');
+// par.setAttribute('id', 'dom-par');
+
+// добавьте элементы выше относительно элемента <div class="main"></div>
+// в 4 разные позиции
+// let container = document.querySelector('.main');
+
+// container.insertAdjacentElement('beforebegin', div);
+// container.insertAdjacentElement('afterbegin', newDiv);
+// container.insertAdjacentElement('beforeend', divv);
+// container.insertAdjacentElement('afterend', par);
+
+// console.log(container);
+
+// let main = document.querySelector('.main');
+// main.insertAdjacentElement('beforeend', div);
+// main.insertAdjacentElement('beforebegin', newDiv);
+// main.insertAdjacentElement('afterbegin', divv);
+// main.insertAdjacentElement('afterend', par);
+
+// insertAdjacentHTML
+// let container = document.querySelector('.container');
+// let head3 = `<h3 class="head head-3" id="head-3">Last name: Ivanov.</h3>`;
+// container.insertAdjacentHTML('afterbegin', head3);
+// container.insertAdjacentHTML('beforeend', head3);
+// container.insertAdjacentHTML('beforebegin', head3);
+// container.insertAdjacentHTML('afterend', head3);
+
+
+
+/**
+ * 
+ * События
+ * 
+ */
+// let button = document.querySelector('#button');
+// console.log(button);
+
+// let head = document.querySelector('#head-1');
+
+// добавляем обработчик события на кнопку
+// button.addEventListener('click', function(){
+//     console.log('Клик');
+
+//     console.log(head.textContent);
+// } );
+
+// button.addEventListener('mouseover', function(){
+//     console.log('Наведение');
+
+//     console.log(head.textContent);
+// } );
+
+// button.addEventListener('mouseout', function(){
+//     console.log('Покидание');
+// } );
+
+
+// 4 задание
+// напишите код, чтобы при клике на кнопку id="super-button" выводился в консоль произвольный текст.
+// * получите текст из любого элемента на странице
+
+// let button = document.querySelector('#super-button');
+
+// button.addEventListener('click', function() {
+//     let head = document.querySelector('#head-1');
+//     console.log(head.textContent);
+// });
+
+// let butten = document.querySelector('#super-button');
+
+// butten.addEventListener('click',()=>console.log(`Текст из первого обзаца: ${document.querySelector('#first-par').textContent}`));
+
+// показ/скрытие элемента
+let button = document.querySelector('#button');// кнопка
+let image = document.querySelector('#photo-1679912466009'); // картинка
+
+let newSrc = 'https://images.unsplash.com/photo-1679770884293-a4f41b5f05cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80';
+
+button.addEventListener('click', function(){
+    //image.src = newSrc;
+    //image.setAttribute('src', newSrc);
+
+    //image.style.display = 'none';
+
+    image.classList.toggle('hidden');
+});
