@@ -462,16 +462,84 @@ h2Name.innerText = newArgum;
 // butten.addEventListener('click',()=>console.log(`Текст из первого обзаца: ${document.querySelector('#first-par').textContent}`));
 
 // показ/скрытие элемента
-let button = document.querySelector('#button');// кнопка
-let image = document.querySelector('#photo-1679912466009'); // картинка
+// let button = document.querySelector('#button');// кнопка
+// let image = document.querySelector('#photo-1679912466009'); // картинка
 
-let newSrc = 'https://images.unsplash.com/photo-1679770884293-a4f41b5f05cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80';
+// let newSrc = 'https://images.unsplash.com/photo-1679770884293-a4f41b5f05cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80';
 
-button.addEventListener('click', function(){
-    //image.src = newSrc;
-    //image.setAttribute('src', newSrc);
+// button.addEventListener('click', function(){
+//     //image.src = newSrc;
+//     //image.setAttribute('src', newSrc);
 
-    //image.style.display = 'none';
+//     //image.style.display = 'none';
 
-    image.classList.toggle('hidden');
+//     image.classList.toggle('hidden');
+// });
+
+
+
+/**
+ * 
+ * блок с картинками
+ * 
+ */
+// переменные с адресами картинок
+let pic1 = 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80';
+let pic2 = 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80';
+let pic3 = 'https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80';
+let pic4 = 'https://images.unsplash.com/reserve/HgZuGu3gSD6db21T3lxm_San%20Zenone.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80';
+let pic5 = 'https://images.unsplash.com/photo-1446329813274-7c9036bd9a1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80';
+
+
+//1. Получаем кнопки
+// let button1 = document.querySelector('.button-1');
+// let button2 = document.querySelector('.button-2');
+// let button3 = document.querySelector('.button-3');
+// let button4 = document.querySelector('.button-4');
+// let button5 = document.querySelector('.button-5');
+
+// 1.1 Получаем все кнопки разом
+let buttons = document.querySelectorAll('.buttons-container .button');
+
+//2. Получаем картинку в контейнере
+let contentImg = document.querySelector('.content-container img');
+
+
+//3. При клике на кнопку 1 обновляем путь к картинке
+// button1.addEventListener('click', function(){
+//     contentImg.src = pic1;
+//     //contentImg.setAttribute('src', pic1);
+// });
+// button2.addEventListener('click', function(){
+//     contentImg.src = pic2;
+// });
+// button3.addEventListener('click', function(){
+//     contentImg.src = pic3;
+// });
+// button4.addEventListener('click', function(){
+//     contentImg.src = pic4;
+// });
+// button5.addEventListener('click', function(){
+//     contentImg.src = pic5;
+// });
+
+// 3.1 перебираем кнопки и на каждую вешаем обработчик события
+buttons.forEach(function(button, index){
+
+    button.addEventListener('click', function(){
+        if(index === 0){
+            contentImg.src = pic1;
+        }else if(index === 1){
+            contentImg.src = pic2;
+        }else if(index === 2){
+            contentImg.src = pic3;
+        }else if(index === 3){
+            contentImg.src = pic4;
+        }else if(index === 4){
+            contentImg.src = pic5;
+        }else{
+            contentImg.src = pic1;
+        }
+    });
+
 });

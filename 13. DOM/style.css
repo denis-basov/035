@@ -12,7 +12,7 @@ body {
     color: blueviolet;
     padding: 10px;
     margin: 10px;
-    border: 3px solid rgb(181, 197, 249);
+    border: 3px solid rgb(173, 131, 96);
     border-radius: 8px;
     transition: all 0.5s;
 }
@@ -23,4 +23,28 @@ body {
 
 img {
     width: 600px;
+}
+
+/* buttons-container */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 20px;
+    gap: 10px;
+    background-color: aliceblue;
+}
+
+.buttons-container .button {
+    padding: 5px 15px;
+}
+
+/* content-container */
+.content-container {
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+.content-container img {
+    width: 100%;
 }
