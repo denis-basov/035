@@ -4,6 +4,11 @@ body {
 
 .hidden {
     display: none;
+    /* color: rgb(248, 186, 186) */
+}
+
+.error {
+    color: red;
 }
 
 .box {

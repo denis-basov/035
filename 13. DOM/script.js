@@ -543,3 +543,43 @@ buttons.forEach(function(button, index){
     });
 
 });
+
+
+
+
+/**
+ * 
+ * работа с формой
+ * focus / blur
+ */
+
+let fname = document.querySelector('#fname');// инпут
+let fnameError = document.querySelector('#fname-error');//спан для ошибок
+
+// fname.addEventListener('focus', function(){
+//     console.log('focus');
+// });
+fname.addEventListener('blur', function(){
+
+    if(fname.value.length > 0){ // если строка не пустая
+        fname.style.backgroundColor = 'rgb(181, 251, 228)';
+        fnameError.textContent = '';
+    }else{
+        fname.style['background-color'] = 'rgb(248, 186, 186)';
+        fnameError.textContent = 'Имя не должно быть пустым';
+    }
+});
+
+
+let lname = document.querySelector('#lname');
+let lnameError = document.querySelector('#lname-error');
+
+lname.addEventListener('blur', function(){
+    if(lname.value.length > 0 ){
+        lname.style.backgroundColor ='green';
+        lnameError.textContent='';
+    } else{
+        lname.style.backgroundColor ='red';
+        lnameError.textContent='Фамилия не должна быть пустой';
+    };
+});
