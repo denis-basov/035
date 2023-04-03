@@ -1,0 +1,19 @@
+.country {
+    max-width: 400px;
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid blanchedalmond;
+    border-radius: 9px;
+    font-size: 20px;
+}
+
+.country-image {
+    display: flex;
+    gap: 10px;
+}
+
+.country-image .image {
+    box-sizing: border-box;
+    width: 49%;
+}

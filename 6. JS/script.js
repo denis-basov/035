@@ -1,7 +1,8 @@
 // let age = 55;
-// let login = 'Vasya123';
-// let myHobby = 'Reading';
+// let login = "Vasya123";
+// let myHobby = "Reading";
 // let userName = 'Vasya';
+
 
 // console.log(age);
 // console.log(login);
@@ -98,7 +99,7 @@
 
 let firstName = 'Ivan';
 let lastName = 'Ivanov';
-let age = 11;
+// let age = 11;
 let hobby = 'Reading';
 let isAdmin = false;
 let image = 'user.jpg';
