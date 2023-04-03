@@ -7,13 +7,12 @@ $greet = 'Hello'; // string
 $greetRus = 'Привет!';
 $title = 'Prog on PHP';
 $head1 = 'Заголовок первого уровня';
-$isAdmin = false; // bool
-
+$isAdmin = true; // bool
 $res = 'hello' . ' ' . 'world';
-
 $str = '一人七八九十入';
 
-echo mb_strlen($greet);
+//echo mb_strlen($greet);
+var_dump($isAdmin);
 
 ?>
 <!doctype html>
@@ -31,6 +30,10 @@ echo mb_strlen($greet);
     <p><?php echo "$greet, $userName. Ваш возраст: $age лет."; ?></p>
     <h2>Простая разметка HTML</h2>
     <p>Конкатенация: <?php echo $res; ?></p>
+<!--    <p>Админ: --><?php //echo $isAdmin; ?><!--</p>-->
+
+    <a href="test.php">Тест</a>
+    <a href="user.php">Юзер</a>
 
     <script src="script.js"></script>
 </body>
