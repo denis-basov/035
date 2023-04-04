@@ -1,0 +1,36 @@
+body{
+    background-color: aliceblue;
+}
+
+.auto{
+    background-color: #e3effe;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    text-align: center;
+}
+
+.car-info{
+    background-color: #d0e6fd;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.car-info span{
+    color: brown;
+    font-weight: bold;
+}
+
+.car-image{
+    width: 70%;
+}
+
+.car-image img{
+    width: 100%;
+}
