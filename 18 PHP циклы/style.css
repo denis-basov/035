@@ -1,0 +1,25 @@
+body{
+    background-color: aliceblue;
+}
+
+.users{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    background-color: bisque;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.user{
+    background-color: antiquewhite;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user .avatar img{
+    width: 100%;
+}
