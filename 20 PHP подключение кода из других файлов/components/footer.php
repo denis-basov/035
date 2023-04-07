@@ -1,11 +1,11 @@
 <footer>
-	<h3>Подвал сайта</h3>
+	<h3><?php echo $footerTitle ?? 'Повал сайта'?></h3>
 	<nav>
-		<a href="index.php">Главная</a>
-		<a href="news.php">Новости</a>
-		<a href="shop.php">Магазин</a>
-		<a href="about.php">Об авторе</a>
-		<a href="help.php">Справка</a>
+        <?php
+            foreach ($nav as $key => $value) {
+                echo "<a href='$key'>$value</a>";
+            }
+        ?>
 	</nav>
 </footer>
 </body>

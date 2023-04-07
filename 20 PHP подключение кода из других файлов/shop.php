@@ -1,7 +1,12 @@
 <?php
-require 'components/header.php';
+    $title = 'Каталог товаров';
+    $headerTitle = 'Каталог товаров нашей компании';
+    $footerTitle = 'Подвал страницы с каталогом';
+
+    require 'components/header.php';
 ?>
 
+    <h2>Каталог товаров</h2>
     <section class="shop">
         <div class="container"></div>
         <h3 class="shops">Товары</h3>

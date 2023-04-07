@@ -1,4 +1,8 @@
 <?php
+    $title = 'Новости';
+    $headerTitle = 'Новости нашей компании';
+    $footerTitle = 'Подвал страницы с новостями';
+
 	require 'components/header.php';
 ?>
 

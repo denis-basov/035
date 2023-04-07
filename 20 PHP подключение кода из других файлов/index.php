@@ -1,4 +1,9 @@
 <?php
+    // данные для отображения в разметке страницы
+    $title = 'Главная страница';
+    $headerTitle = 'Шапка главной страницы';
+    $footerTitle = 'Подвал главной страницы';
+
     require 'components/header.php';
 ?>
 <main>
