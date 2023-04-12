@@ -11,9 +11,10 @@ $admin_login = 'admin';
 $admin_password = '123456';
 
 
-if( isset( $_SESSION['first_name'] )){ // если есть переменные сессии
-	echo '<h2>Привет, ' . $_SESSION['first_name'] . '</h2>';
-	echo "<a href='user.php'>Перейти в профиль</a>";
+if( isset( $_SESSION['admin_login'] )){ // если есть переменные сессии
+	echo '<h2>Привет, ' . $_SESSION['admin_login'] . '</h2>';
+	echo "<a href='user.php'>Перейти в профиль</a><br>";
+	echo "<a href='exit.php'>Выйти</a>";
 
 } else {
 	if ( $_SERVER['REQUEST_METHOD'] === "POST" ){ // проверяем, отправлена ли форма
@@ -22,8 +23,18 @@ if( isset( $_SESSION['first_name'] )){ // если есть переменные
 		$password = htmlspecialchars(trim($_POST['password']));
 
 		// проверяем, верные ли данные введены
-
-
+		if($login === $admin_login){ // если логин введен верно
+			if($password === $admin_password){ // если пароль введен верно
+				// установить данные сессии
+				$_SESSION['admin_login'] = $login;
+				// перенаправить пользователя
+				header('Location: /');
+			}else{ // если пароль введен не верно
+				echo 'Неверный пароль';
+			}
+		}else{ // если логин введен НЕ верно
+			echo 'Неверный логин';
+		}
 	} else {
 
 		echo <<<_HTML_

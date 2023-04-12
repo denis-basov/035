@@ -19,12 +19,7 @@
 </head>
 <body>
 	<h2>Личный кабинет</h2>
-	<h3>Имя: <?php echo $_SESSION['first_name']; ?></h3>
-	<h3>Фамилия: <?php echo $_SESSION['last_name']; ?></h3>
-	<p>Логин: <?php echo $_SESSION['login']; ?></p>
-	<p>Электронная почта: <?php echo $_SESSION['email']; ?></p>
-	<p>Пароль: <?php echo $_SESSION['password']; ?></p>
-
+	<h3>Логин: <?php echo $_SESSION['admin_login']; ?></h3>
 	<div>
 		<a href="/">Главная</a>
 		<a href="exit.php">Выйти</a>
