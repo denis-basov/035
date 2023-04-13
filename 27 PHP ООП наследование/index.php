@@ -15,10 +15,10 @@ function d($arr){
  */
 class Dog{
 	// свойства
-	public $name;
-	public $age;
-	public $weight;
-	public $color;
+	protected $name;
+	protected $age;
+	protected $weight;
+	protected $color;
 
 	// методы
 	public function __construct($name, $age, $weight, $color){
@@ -54,7 +54,9 @@ _HTML;
 $bobik = new Dog('Бобик', 4, 12, 'Белый');
 $strelka = new Dog('Стрелка', 2, 6, 'Серый');
 
-//$bobik->getSummary();
+//echo $bobik->color = "red";
+$bobik->getSummary();
+
 //$strelka->getSummary();
 //
 //$bobik->getBasicInfo();
@@ -65,17 +67,63 @@ $strelka = new Dog('Стрелка', 2, 6, 'Серый');
  * дочерний класс гончих собак, родитель - Dog
  */
 class RaceDog extends Dog{
-	public $speed; // уникальное свойство дочернего класса
+	private $speed; // уникальное свойство дочернего класса
 
 	public function __construct($name, $age, $weight, $color, $speed){
 		parent::__construct($name, $age, $weight, $color);
 		$this->speed = $speed;
 	}
+
+	public function getSummary(){ // метод для отображения свойств текущего объекта
+		echo <<<_HTML
+			<div class="dog">
+				<h3>Кличка собаки: $this->name</h3>
+				<p>Возраст: $this->age лет</p>
+				<p>Вес: $this->weight кг</p>
+				<p>Цвет шерсти: $this->color</p>
+				<p>Скорость: $this->speed</p>
+			</div>
+_HTML;
+	}
+
+	public function getColor(){
+		echo "Цвет: $this->color";
+	}
 }
 
-$belka = new RaceDog('Стрелка', 5, 3, 'Рыжий', 90);
+$belka = new RaceDog('Белка', 5, 3, 'Рыжий', 90);
 $belka->getSummary();
-d($belka);
+//$belka->getColor();
+//$belka->color;
+
+/**
+ * дочерний класс выставочных собак - родитель Dog
+ */
+class ExDod extends Dog{
+	private $breed; // порода - уникальное свойство выставочных собак
+
+	public function __construct($name, $age, $weight, $color, $breed)
+	{
+		parent::__construct($name, $age, $weight, $color);
+		$this->breed = $breed;
+	}
+
+	public function getSummary(){ // метод для отображения свойств текущего объекта
+		echo <<<_HTML
+			<div class="dog">
+				<h3>Кличка собаки: $this->name</h3>
+				<p>Возраст: $this->age лет</p>
+				<p>Вес: $this->weight кг</p>
+				<p>Цвет шерсти: $this->color</p>
+				<p>Порода: $this->breed</p>
+			</div>
+_HTML;
+	}
+
+}
+
+$vasilek = new ExDod('Василёк', 4, 6, 'Чёрный', 'Пудель');
+$vasilek->getSummary();
 
 
 
