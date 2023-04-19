@@ -27,4 +27,4 @@ class DBConnectConst
 //
 //define(DB_NAME, 'test');
 //const DB_NAME = 'test';
-// echo DBConnectConst::getConnection();
+// echo DBConnectConst::DB_PASSWORD;
