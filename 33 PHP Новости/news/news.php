@@ -54,6 +54,7 @@ $result = $pdo->query($query);
 <body>
 	<div class="news">
         <h1>Новости</h1>
+
 		<?php while( $news_item = $result->fetch() ):?>
 			<div class="news_item">
                 <a href="news_detail.php?id=<?=$news_item['news_id']?>"><h2><?= "$news_item[title]. Идентификатор $news_item[news_id]"?></h2></a>
@@ -65,7 +66,7 @@ $result = $pdo->query($query);
 
                 <span>Дата: <?= $news_item['add_date']?></span>
                 <!-- создайте страницу с автором и ниже сделайте ссылку на нее-->
-                <span><a href="#">Автор: <?= $news_item['last_name']?></a></span>
+                <span><a href="author_detail.php?id=<?= $news_item['author_id']?>">Автор: <?= $news_item['last_name']?></a></span>
                 <span>Категория: <?= $news_item['category']?></span>
 
                 <a href="news_detail.php?id=<?=$news_item['news_id']?>">Подробнее...</a>
