@@ -7,6 +7,8 @@
  * CRUD
  */
 
+
+
 require 'DBConnect.php';
 $pdo = DBConnect::getConnection();
 ?>
@@ -33,6 +35,9 @@ $pdo = DBConnect::getConnection();
         }
         .box span{
             color: brown;
+        }
+        .box img{
+            width: 100%;
         }
         input{
             margin-bottom: 7px;
@@ -67,7 +72,7 @@ $pdo = DBConnect::getConnection();
 		if( isset($_GET['add']) ){
 		    echo <<<_HTML_
                 <h2>Добавить нового пользователя</h2>
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     
                     <label>Имя:</label>
                     <input type="text" name="first_name"><br>
@@ -82,7 +87,10 @@ $pdo = DBConnect::getConnection();
                     <input type="email" name="email"><br>
                     
                     <label>Пароль:</label>
-                    <input type="password" name="password"><br>                                                            
+                    <input type="password" name="password"><br> 
+                    
+                    <label>Аватар:</label>
+		            <input type="file" name="avatar"><br>                                                           
                     
                     <input type="submit" name="action" value="Создать">
                 </form>
@@ -94,12 +102,16 @@ _HTML_;
          * обрабатываем введенные данные
 		 */
 		if( isset($_POST['action']) && $_POST['action'] === 'Создать' ){
-		    // проверка на пустые поля
+
+            $avatar = $_FILES['avatar'];
+
+			// проверка на пустые поля
 		    if( !empty($_POST['first_name']) &&
                 !empty($_POST['last_name']) &&
                 !empty($_POST['login']) &&
                 !empty($_POST['email']) &&
-                !empty($_POST['password']) )
+                !empty($_POST['password']) &&
+				$avatar['error'] !== 4)
 		    { // если поля не пустые, работаем с данными
 
 		        // 1. Экранируем данные
@@ -109,10 +121,16 @@ _HTML_;
                 $email = htmlspecialchars( trim($_POST['email']) );
                 $password = htmlspecialchars( trim($_POST['password']) );
 
-                // 2. Записываем в БД
-                $query = "INSERT INTO users VALUES(?, ?, ?, ?, ?, ?)";
+                // 2. Формирование пути к картинке
+				$avatar_path = 'images/'.$login.'_'.time().'_'.$avatar['name']; // images/image-2.jpg
+
+                // 3. перемещаем картинку из временной папки в папку images
+				move_uploaded_file($avatar['tmp_name'], $avatar_path);
+
+                // 4. Записываем в БД
+                $query = "INSERT INTO users VALUES(?, ?, ?, ?, ?, ?, ?)";
                 $result = $pdo->prepare($query);
-                $result->execute([null, $first_name, $last_name, $login, $email, $password]);
+                $result->execute([null, $first_name, $last_name, $login, $email, $password, $avatar_path]);
                 header('Location: /');
 
             }else{ // если не все поля заполнены, выводим ошибку
@@ -128,6 +146,19 @@ _HTML_;
 		    // забираем id и приводим к числу
 		    $id = (int)$_POST['id'];
 
+		    // получаем ссылку на аватар
+            $query = "SELECT avatar FROM users WHERE id = ?";
+            $result = $pdo->prepare($query);
+            $result->execute([$id]);
+			$avatar_path = $result->fetch()['avatar'];
+
+
+			// проверяем, есть ли картинка и путь к картинке НЕ images/default.png
+            if( file_exists($avatar_path) && $avatar_path !== 'images/default.png' ){
+                // если картинка есть, удаляем
+				unlink($avatar_path);
+            }
+
 		    // удаляем пользователя с указанным id
             $query = "DELETE FROM users WHERE id = ?";
             $result = $pdo->prepare($query);
@@ -135,11 +166,106 @@ _HTML_;
             header('Location: /');
         }
 
+		/**
+		 * если нажата кнопка name="action" value="Изменить"
+		 */
+		if( isset($_POST['action']) && $_POST['action'] === 'Изменить' ){
+            // забираем id и приводим к числу
+            $id = (int)$_POST['id'];
+
+            // получаем данные о пользователе из бд по id
+            $query = "SELECT id, first_name, last_name, login, email, password
+                        FROM users
+                        WHERE id = ?";
+            $result = $pdo->prepare($query);
+            $result->execute([$id]);
+            $user = $result->fetch();
+
+            // отображаем форму для редактирования и подставляем в value данные из бд
+            echo <<<_HTML_
+                <h2>Изменение пользователя $user[first_name] $user[last_name]</h2>
+                <form action="" method="POST" enctype="multipart/form-data">
+                   
+                    <label>Имя:</label>
+                    <input type="text" name="first_name" value="$user[first_name]"><br>
+                    
+                    <label>Фамилия:</label>
+                    <input type="text" name="last_name" value="$user[last_name]"><br>
+                    
+                    <label>Имя пользователя:</label>
+                    <input type="text" name="login" value="$user[login]"><br>
+                    
+                    <label>Адрес электронной почты:</label>
+                    <input type="email" name="email" value="$user[email]"><br>
+                    
+                    <label>Пароль:</label>
+                    <input type="text" name="password" value="$user[password]"><br>    
+                    
+                    <label>Аватар:</label>
+		            <input type="file" name="avatar"><br>                                  
+                                        
+                    <input type="hidden" name="id" value="$user[id]">
+                    <input type="submit" name="action" value="Обновить">
+                </form>
+                
+_HTML_;
+
+        }
+
+		/**
+		 * при нажатии кнопки name="action" value="Обновить"
+		 */
+		if( isset($_POST['action']) && $_POST['action'] === 'Обновить' ){
+		    // проверка на пустые поля
+            if(
+                !empty($_POST['first_name']) &&
+                !empty($_POST['last_name']) &&
+                !empty($_POST['login']) &&
+                !empty($_POST['email']) &&
+                !empty($_POST['password'])
+            ){ // если все данные заполнены
+                // экранирование данных
+                $first_name = htmlspecialchars(trim( $_POST['first_name'] ));
+                $last_name = htmlspecialchars(trim( $_POST['last_name'] ));
+                $login = htmlspecialchars(trim( $_POST['login'] ));
+                $email = htmlspecialchars(trim( $_POST['email'] ));
+                $password = htmlspecialchars(trim( $_POST['password'] ));
+
+                $id = (int)$_POST['id'];
+
+                /**
+                 * работа с картинкой
+                 */
+                DBConnect::d($_FILES);
+                // если новая картинка передана
+                    // удаляем старую картинку
+                    // загружаем новую картинку в папку images
+                    // записываем в бд все, включая новый путь к картинке
+                // если новая картинка не передана
+                    // записываем в бд текстовые данные
+
+
+                die();
+                // изменение данных в таблице
+                $query = "UPDATE users
+                          SET first_name = ?, last_name = ?, login = ?, email = ?, password = ?     
+                          WHERE id = ?";
+                $result = $pdo->prepare($query);
+                $result->execute([$first_name, $last_name, $login, $email, $password, $id]);
+                header('Location: /');
+
+            }else{
+				echo "<h3>Вы не заполнили все поля</h3>";
+            }
+
+        }
+
+
 
 		/**
 		 * выводим список пользователей в документ
 		 */
-		$query = "SELECT id, first_name, last_name, login, email, password
+		$query = "SELECT id, first_name, last_name, login, email, password, avatar
 		            FROM users
 		            ORDER BY first_name";
 		$result = $pdo->query($query); // выбираем данные из бд
@@ -155,12 +281,14 @@ _HTML_;
 		while( $user = $result->fetch() ){
 		    echo <<<_HTML_
                 <div class="box">
+                    <img src="$user[avatar]" alt="$user[first_name] $user[last_name]">
                     <p>ID: <span>$user[id]</span></p>
                     <p>Имя: <span>$user[first_name]</span></p>
                     <p>Фамилия: <span>$user[last_name]</span></p>
                     <p>Логин: <span>$user[login]</span></p>
                     <p>Электронная почта: <span>$user[email]</span></p>
                     <form action="" method="POST">
+<!--                        <input type="hidden" name="avatar" value="$user[avatar]">-->
                         <input type="hidden" name="id" value="$user[id]">
                         <input type="submit" name="action" value="Изменить">
                         <input type="submit" name="action" value="Удалить">
