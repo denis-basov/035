@@ -149,7 +149,3 @@ $category_news = $result->fetchAll();
 	</div>
 </body>
 </html>
-
-
-
-

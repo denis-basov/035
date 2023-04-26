@@ -236,22 +236,41 @@ _HTML_;
                 /**
                  * работа с картинкой
                  */
-                DBConnect::d($_FILES);
-                // если новая картинка передана
-                    // удаляем старую картинку
-                    // загружаем новую картинку в папку images
-                    // записываем в бд все, включая новый путь к картинке
-                // если новая картинка не передана
+                $avatar = $_FILES['avatar'];
+
+                if($avatar['error'] === 4){// если новая картинка не передана
                     // записываем в бд текстовые данные
+                    $query = "UPDATE users
+                              SET first_name = ?, last_name = ?, login = ?, email = ?, password = ?     
+                              WHERE id = ?";
+                    $result = $pdo->prepare($query);
+                    $result->execute([$first_name, $last_name, $login, $email, $password, $id]);
 
+                }else{// если новая картинка передана
+                    // загружаем новую картинку в папку images
+                    $avatar_path = 'images/'.$login.'_'.time().'_'.$avatar['name'];
+                    move_uploaded_file($avatar['tmp_name'], $avatar_path);
 
-                die();
-                // изменение данных в таблице
-                $query = "UPDATE users
-                          SET first_name = ?, last_name = ?, login = ?, email = ?, password = ?     
-                          WHERE id = ?";
-                $result = $pdo->prepare($query);
-                $result->execute([$first_name, $last_name, $login, $email, $password, $id]);
+                    // удаляем старую картинку, только если это не дефолтная картинка
+                    // 1. получаем ссылку на старую картинку
+                    $query = "SELECT avatar FROM users WHERE id = ?";
+                    $result = $pdo->prepare($query);
+                    $result->execute([$id]);
+                    $del_avatar_path = $result->fetch()['avatar'];
+                    // 2. удаляем старую картинку
+                    // проверяем, есть ли картинка и путь к картинке НЕ images/default.png
+                    if( file_exists($del_avatar_path) && $del_avatar_path !== 'images/default.png' ){
+                        // если картинка есть, удаляем
+                        unlink($del_avatar_path);
+                    }
+
+                    // записываем в бд все, включая новый путь к картинке
+                    $query = "UPDATE users
+                              SET first_name = ?, last_name = ?, login = ?, email = ?, password = ?, avatar = ?     
+                              WHERE id = ?";
+                    $result = $pdo->prepare($query);
+                    $result->execute([$first_name, $last_name, $login, $email, $password, $avatar_path, $id]);
+                }
                 header('Location: /');
 
             }else{

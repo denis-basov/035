@@ -1,10 +1,10 @@
 <?php
-	require 'DBConnect.php';
+    require 'DBConnect.php';
 
-	DBConnect::d($_POST);
-	DBConnect::d($_FILES);
+    DBConnect::d($_POST);
+
+
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,21 +13,34 @@
 				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+    <style>
+        p,
+        label {
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+
+        input {
+            margin: 0.4rem;
+        }
+
+    </style>
 </head>
 <body>
-	<h2>Работа с файлами</h2>
-	<form action="" method="POST" enctype="multipart/form-data">
+<fieldset>
+    <form method="POST">
 
-		<label for="">Имя:</label>
-		<input type="text" name="name"><br>
+        <div>
+            <input type="radio" name="gender" value="man">
+            <label>Мужчина</label>
+        </div>
 
-		<label for="">Картинка 1:</label>
-		<input type="file" name="image-1"><br>
+        <div>
+            <input type="radio" name="gender" value="woman" checked>
+            <label>Женщина</label>
+        </div>
 
-		<label for="">Картинка 2:</label>
-		<input type="file" name="image-2"><br>
+        <input type="submit" value="Отправить">
 
-		<input type="submit" value="Загрузить" >
 	</form>
 </body>
 </html>
