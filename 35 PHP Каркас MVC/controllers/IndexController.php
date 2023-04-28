@@ -14,4 +14,5 @@ class IndexController
 
 		return true;
 	}
+
 }

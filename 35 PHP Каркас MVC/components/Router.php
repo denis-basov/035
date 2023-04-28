@@ -83,8 +83,9 @@ class Router
 //				Debug::d($parameters);
 
 				// создаем объект нужного контроллера и вызываем нужный метод
-				$controllerObject = new $controllerName();
-				$result = $controllerObject->$actionName(...$parameters);
+				$controllerObject = new $controllerName(); //  new NewsController(), new ContactsController
+				$result = $controllerObject->$actionName(...$parameters); // actionView(12)
+				// $controllerName::$actionName(...$parameters); // если методы статические
 
 				// если метод сработал, прерываем цикл
 				if($result){

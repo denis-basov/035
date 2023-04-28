@@ -13,7 +13,11 @@ define('ROOT', dirname(__FILE__)); // определяем константу с
 require ROOT . '/components/Debug.php';
 require ROOT . '/components/Router.php';
 
-// Вызываем методы класса Router
+// 3. Подключение к БД
+require ROOT . '/components/DBConnect.php';
+
+
+// 4. Вызываем методы класса Router
 $newRout = new Router();
 //Debug::d($newRout);
 $newRout->run();

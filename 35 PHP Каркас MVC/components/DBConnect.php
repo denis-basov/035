@@ -4,7 +4,7 @@
 class DBConnect
 {
 	// свойства для подключения к бд
-	private static $dbName = '035_news';
+	private static $dbName = '035_mini_blog';
 	private static $dbHost = 'localhost';
 	private static $dbLogin = 'root';
 	private static $dbPassword = '';
