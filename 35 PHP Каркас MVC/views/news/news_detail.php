@@ -3,17 +3,18 @@
 	require 'views/components/header.php';
 ?>
 
-<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('images/img_2.jpg');">
+<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('<?=$news_item['image']?>');">
 	<div class="container">
 		<div class="row same-height justify-content-center">
 			<div class="col-md-12 col-lg-10">
 				<div class="post-entry text-center">
-					<span class="post-category text-white bg-success mb-3">Nature</span>
-					<h1 class="mb-4"><a href="#">The AI magically removes moving objects from videos.</a></h1>
+					<span class="post-category text-white <?=$news_item['class_name']?> mb-3"><?=$news_item['translation']?></span>
+					<h1 class="mb-4"><?=$news_item['news_title']?></h1>
 					<div class="post-meta align-items-center text-center">
-						<figure class="author-figure mb-0 mr-3 d-inline-block"><img src="images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-						<span class="d-inline-block mt-1">By Carrol Atkinson</span>
-						<span>&nbsp;-&nbsp; February 10, 2019</span>
+						<figure class="author-figure mb-0 mr-3 d-inline-block"><img src="<?=$news_item['avatar']?>" alt="Image" class="img-fluid"></figure>
+						<span class="d-inline-block mt-1"><?=$news_item['first_name']?>
+                          <?=$news_item['last_name']?></span>
+						<span>&nbsp;-&nbsp; <?=substr($news_item['add_date'], 5, 5)?></span>
 					</div>
 				</div>
 			</div>
@@ -29,31 +30,14 @@
 			<div class="col-md-12 col-lg-8 main-content">
 
 				<div class="post-content-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt eveniet rerum repellendus porro.</p>
-					<p>Sint ab voluptates itaque, ipsum porro qui obcaecati cumque quas sit vel. Voluptatum provident id quis quo. Eveniet maiores perferendis officia veniam est laborum, expedita fuga doloribus natus repellendus dolorem ab similique sint eius cupiditate necessitatibus, magni nesciunt ex eos.</p>
-					<p>Quis eius aspernatur, eaque culpa cumque reiciendis, nobis at earum assumenda similique ut? Aperiam vel aut, ex exercitationem eos consequuntur eaque culpa totam, deserunt, aspernatur quae eveniet hic provident ullam tempora error repudiandae sapiente illum rerum itaque voluptatem. Commodi, sequi.</p>
-					<div class="row mb-5 mt-5">
-						<div class="col-md-12 mb-4">
-							<img src="template/images/img_1.jpg" alt="Image placeholder" class="img-fluid rounded">
-						</div>
-						<div class="col-md-6 mb-4">
-							<img src="template/images/img_2.jpg" alt="Image placeholder" class="img-fluid rounded">
-						</div>
-						<div class="col-md-6 mb-4">
-							<img src="template/images/img_3.jpg" alt="Image placeholder" class="img-fluid rounded">
-						</div>
-					</div>
-					<p>Quibusdam autem, quas molestias recusandae aperiam molestiae modi qui ipsam vel. Placeat tenetur veritatis tempore quos impedit dicta, error autem, quae sint inventore ipsa quidem. Quo voluptate quisquam reiciendis, minus, animi minima eum officia doloremque repellat eos, odio doloribus cum.</p>
-					<p>Temporibus quo dolore veritatis doloribus delectus dolores perspiciatis recusandae ducimus, nisi quod, incidunt ut quaerat, magnam cupiditate. Aut, laboriosam magnam, nobis dolore fugiat impedit necessitatibus nisi cupiditate, quas repellat itaque molestias sit libero voluptas eveniet omnis illo ullam dolorem minima.</p>
-					<p>Porro amet accusantium libero fugit totam, deserunt ipsa, dolorem, vero expedita illo similique saepe nisi deleniti. Cumque, laboriosam, porro! Facilis voluptatem sequi nulla quidem, provident eius quos pariatur maxime sapiente illo nostrum quibusdam aliquid fugiat! Earum quod fuga id officia.</p>
-					<p>Illo magnam at dolore ad enim fugiat ut maxime facilis autem, nulla cumque quis commodi eos nisi unde soluta, ipsa eius aspernatur sint atque! Nihil, eveniet illo ea, mollitia fuga accusamus dolor dolorem perspiciatis rerum hic, consectetur error rem aspernatur!</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus magni explicabo id molestiae, minima quas assumenda consectetur, nobis neque rem, incidunt quam tempore perferendis provident obcaecati sapiente, animi vel expedita omnis quae ipsa! Obcaecati eligendi sed odio labore vero reiciendis facere accusamus molestias eaque impedit, consequuntur quae fuga vitae fugit?</p>
-				</div>
+                    <p><?=$news_item['text']?></p>
+                </div>
 
 
 				<div class="pt-5">
-					<p>Categories:  <a href="#">Food</a>, <a href="#">Travel</a>  Tags: <a href="#">#manila</a>, <a href="#">#asia</a></p>
+					<p>Категория: <a href="/news/<?=$news_item['category_title']?>"><?=$news_item['translation']?></a
+                        >  Тэги: <a href="#">#manila</a>, <a
+                                href="#">#asia</a></p>
 				</div>
 
 
@@ -185,11 +169,13 @@
 				<!-- END sidebar-box -->
 				<div class="sidebar-box">
 					<div class="bio text-center">
-						<img src="images/person_2.jpg" alt="Image Placeholder" class="img-fluid mb-5">
+						<img src="<?=$news_item['avatar']?>" alt="<?=$news_item['first_name']?> <?=$news_item['last_name']?>" class="img-fluid
+						mb-5">
 						<div class="bio-body">
-							<h2>Craig David</h2>
-							<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-							<p><a href="#" class="btn btn-primary btn-sm rounded px-4 py-2">Read my bio</a></p>
+							<h2><?=$news_item['first_name']?> <?=$news_item['last_name']?></h2>
+							<p class="mb-4"><?=$news_item['short_info']?></p>
+							<p><a href="author/<?=$news_item['author_id']?>" class="btn btn-primary btn-sm rounded
+							px-4 py-2">Биография</a></p>
 							<p class="social">
 								<a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
 								<a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -201,42 +187,22 @@
 				</div>
 				<!-- END sidebar-box -->
 				<div class="sidebar-box">
-					<h3 class="heading">Popular Posts</h3>
+					<h3 class="heading">Последние новости категории <?=$news_item['translation']?></h3>
 					<div class="post-entry-sidebar">
 						<ul>
+                            <?php foreach ($news_items_by_category as $news_item):?>
 							<li>
-								<a href="">
-									<img src="images/img_1.jpg" alt="Image placeholder" class="mr-4">
+								<a href="/news/<?=$news_item['id']?>">
+									<img src="<?=$news_item['image']?>" alt="<?=$news_item['title']?>" class="mr-4">
 									<div class="text">
-										<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+										<h4><?=$news_item['title']?></h4>
 										<div class="post-meta">
-											<span class="mr-2">March 15, 2018 </span>
+											<span class="mr-2"><?=$news_item['add_date']?></span>
 										</div>
 									</div>
 								</a>
 							</li>
-							<li>
-								<a href="">
-									<img src="images/img_2.jpg" alt="Image placeholder" class="mr-4">
-									<div class="text">
-										<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-										<div class="post-meta">
-											<span class="mr-2">March 15, 2018 </span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<img src="images/img_3.jpg" alt="Image placeholder" class="mr-4">
-									<div class="text">
-										<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-										<div class="post-meta">
-											<span class="mr-2">March 15, 2018 </span>
-										</div>
-									</div>
-								</a>
-							</li>
+							<?php endforeach;?>
 						</ul>
 					</div>
 				</div>

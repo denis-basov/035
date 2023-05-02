@@ -52,7 +52,7 @@
 						<ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
 							<li><a href="/">Главная</a></li>
 							<li><a href="/news">Новости</a></li>
-							<li><a href="/news/space">Космос</a></li>
+							<li><a href="/news/science">Наука</a></li>
 							<li><a href="/news/sport">Спорт</a></li>
 							<li><a href="/news/culture">Культура</a></li>
 							<li><a href="/contacts">Контакты</a></li>

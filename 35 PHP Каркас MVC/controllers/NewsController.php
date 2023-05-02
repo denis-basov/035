@@ -28,12 +28,19 @@ class NewsController
 	 */
 	public function actionView($id){
 		//echo '<h1>' . Debug::d($id) . '</h1>';
-
-		$news_item = News::getNewsItemById($id);
+		$id = (int)$id;
 
 		// получение новостей из бд по указанному id
+		$news_item = News::getNewsItemById($id);
+		// Debug::d($news_item);
+
+		// echo $news_item['category_id']; // идентификатор категории
+		// получаем несколько последних новостей по идентификатору категории
+		$news_items_by_category = News::getNewsItemsByCategory($news_item['category_id']);
+		//Debug::d($news_items_by_category);
+
 		// работа с данными в новости
-		// формирование вывода новости на страницу
+		$news_item['text'] = str_replace("\r\n\r\n", "</p><p>", $news_item['text']);
 
 		// подключаем вид с отображением новости детально
 		require ROOT . '/views/news/news_detail.php';
@@ -46,8 +53,16 @@ class NewsController
 	 */
 	public function actionCategory($category){
 
+		// получаем идентификатор категории
+		$category_id = News::getCategoryIdByTitle($category);
+		//var_dump($category_id);
+
+		// получаем список новостей по указанному идентификатору категории
+		$newsList = News::getNewsListByCategoryId($category_id);
+		//Debug::d($newsList);
+
 		// подключаем вид с отображением страницы со списком новостей
-		require ROOT . '/views/news/category.php';
+		require ROOT . '/views/news/index.php';
 
 		return true;
 	}

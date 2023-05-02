@@ -4,13 +4,19 @@
 ?>
 
 <div class="py-5 bg-light">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<h3>Список новостей</h3>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <?php if(isset($category)):?>
+                    <span>Категория</span>
+                    <h3><?=$newsList[0]['translation']?></h3>
+                    <p><?=$newsList[0]['description']?></p>
+                <?php else: ?>
+                    <h3>Список новостей</h3>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="site-section bg-white">
@@ -19,7 +25,7 @@
             <?php foreach($newsList as $news_item):?>
 			<div class="col-lg-4 mb-4">
 				<div class="entry2">
-					<a href="news/<?=$news_item['news_id']?>"><img src="<?=$news_item['image']?>"
+					<a href="/news/<?=$news_item['news_id']?>"><img src="<?=$news_item['image']?>"
                                                                    alt="<?=$news_item['title']?>"
                                                                    class="img-fluid
 					rounded"></a>
@@ -27,7 +33,7 @@
 						<span class="post-category text-white <?=$news_item['class_name']?>
 						mb-3"><?=$news_item['translation']?></span>
 
-						<h2><a href="news/<?=$news_item['news_id']?>"><?=$news_item['title']?></a></h2>
+						<h2><a href="/news/<?=$news_item['news_id']?>"><?=$news_item['title']?></a></h2>
 						<div class="post-meta align-items-center text-left clearfix">
 							<figure class="author-figure mb-0 mr-3 float-left"><img src="<?=$news_item['avatar']?>"
                                                                                     alt="<?=$news_item['first_name']?> <?=$news_item['last_name']?>" class="img-fluid"></figure>
@@ -38,7 +44,7 @@
 						</div>
 
 						<p><?=mb_substr($news_item['text'], 0, 150) ?></p>
-						<p><a href="news/<?=$news_item['news_id']?>">Подробнее...</a></p>
+						<p><a href="/news/<?=$news_item['news_id']?>">Подробнее...</a></p>
 					</div>
 				</div>
 			</div>
