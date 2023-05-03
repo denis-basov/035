@@ -14,6 +14,8 @@
 	<div class="main">
         <?php if( isset($_SESSION['valid_user']) ):?>
             <h3>Добро пожаловать, <?=$_SESSION['valid_user']?></h3>
+            <a href="cabinet.php">Личный кабинет</a>
+            <a href="exit.php">Выход</a>
         <?php else:?>
             <a href="enter.php">Вход</a>
             <a href="register.php">Регистрация</a>
