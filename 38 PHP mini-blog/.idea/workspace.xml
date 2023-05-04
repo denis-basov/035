@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8adf553a-f3e4-4ef4-9528-722229fbbdae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/JsNewsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/js/news-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/news/js-news.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/components/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/components/footer.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2HdqF3mz6jZjq7Ht7NvqHX2ig6z" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\mini-blog" />
+      <recent name="D:\OSPanel\domains\mini-blog\template\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\mini-blog\template\images\other" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8adf553a-f3e4-4ef4-9528-722229fbbdae" name="Default Changelist" comment="" />
+      <created>1668625201371</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668625201371</updated>
+      <workItem from="1668625202602" duration="2869000" />
+      <workItem from="1668664683597" duration="13000" />
+      <workItem from="1669128606769" duration="868000" />
+      <workItem from="1669129598804" duration="7481000" />
+      <workItem from="1669183025183" duration="40000" />
+      <workItem from="1669386899327" duration="13320000" />
+      <workItem from="1669471259040" duration="2248000" />
+      <workItem from="1669728613338" duration="9324000" />
+      <workItem from="1669750860104" duration="841000" />
+      <workItem from="1669815567124" duration="9684000" />
+      <workItem from="1669874291998" duration="12000" />
+      <workItem from="1669986435110" duration="10005000" />
+      <workItem from="1670100845165" duration="685000" />
+      <workItem from="1670102218579" duration="137000" />
+      <workItem from="1670150278321" duration="5128000" />
+      <workItem from="1670180603818" duration="2067000" />
+      <workItem from="1670183150435" duration="9000" />
+      <workItem from="1670334276311" duration="6106000" />
+      <workItem from="1670493814409" duration="3409000" />
+      <workItem from="1670854996935" duration="31000" />
+      <workItem from="1675452039507" duration="20000" />
+      <workItem from="1675457202518" duration="37000" />
+      <workItem from="1682938288210" duration="4384000" />
+      <workItem from="1683191883245" duration="1390000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
